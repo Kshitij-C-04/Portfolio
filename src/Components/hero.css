@@ -1,0 +1,113 @@
+.hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+    padding-top: 120px;
+    padding: 120px 5vw 50px 5vw;
+    box-sizing: border-box;
+}
+
+.hero h1 {
+    text-align: center;
+    width: 40%;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.hero h1 span {
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    width: 50%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.hero-action {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-connect {
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.hero-connect:hover {
+    transform: scale(1.05);
+}
+
+.hero-resume {
+    padding: 15px 50px;
+    border-radius: 50px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.hero-resume:hover {
+    border: 2px solid purple;
+    transform: scale(1.05);
+}
+
+/* ---------- Responsive Styles ---------- */
+@media screen and (max-width: 1023px) {
+    .hero h1 {
+        width: 80%;
+        font-size: 32px;
+    }
+
+    .hero p {
+        width: 85%;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .hero-action {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        width: 100%;
+        font-size: 26px;
+    }
+
+    .hero p {
+        width: 100%;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .hero-action {
+        gap: 15px;
+        font-size: 16px;
+    }
+
+    .hero-connect,
+    .hero-resume {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
