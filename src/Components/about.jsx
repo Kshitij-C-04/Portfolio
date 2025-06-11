@@ -28,11 +28,11 @@ const About = ({ refProp }) => {
           <div className="about-skills">
             <div className="about-skill">
               <p>English</p>
-              <hr style={{ width: "80%" }} />
+              <hr style={{ width: "75%" }} />
             </div>
             <div className="about-skill">
               <p>Hindi</p>
-              <hr style={{ width: "80%" }} />
+              <hr style={{ width: "75%" }} />
             </div>
             <div className="about-skill">
               <p>Marathi</p>

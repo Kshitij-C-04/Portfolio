@@ -62,6 +62,6 @@
   }
 
   .hamburger {
-    display: block;
+    display: flex;
   }
 }
