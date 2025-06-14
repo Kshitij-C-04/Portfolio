@@ -1,20 +1,26 @@
-import React from 'react'
-import './hero.css'
+import React from 'react';
+import './hero.css';
+import { motion } from 'framer-motion';
 
-
-const hero = () => {
+const Hero = () => {
   return (
-    <div id='home' className='hero'>
-        
-        <h1><span>I am Kshitij Chaware ,</span>  Web Developer based in Mumbai.</h1>
-        <p></p>
-        <div className="hero-action">
-            <div className="hero-connect">Connect With Me</div>
-            <div className="hero-resume">My Resume</div>
-        </div>
-      
-    </div>
-  )
-}
+    <div id="hero" className="hero">
+      <motion.h1
+        initial={{ opacity: 0, x: -100 }}                // Start from left (-X)
+        whileInView={{ opacity: 1, x: 0 }}                // Animate to center (X = 0)
+        transition={{ duration: 0.8, ease: 'easeOut' }}   // Smooth ease
+        viewport={{ once: true, amount: 0.5 }}            // Trigger when 50% visible
+      >
+        <span>I am Kshitij Chaware,</span> Web Developer based in Mumbai.
+      </motion.h1>
 
-export default hero
+      <p></p>
+      <div className="hero-action">
+        <div className="hero-connect">Connect With Me</div>
+        <div className="hero-resume">My Resume</div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

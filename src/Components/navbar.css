@@ -1,3 +1,4 @@
+/* Navbar Base */
 .navbar {
   display: flex;
   align-items: center;
@@ -10,9 +11,10 @@
   background-color: #000;
   z-index: 1000;
   box-sizing: border-box;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Nav Menu */
 .nav-menu {
   display: flex;
   gap: 60px;
@@ -24,6 +26,7 @@
 .nav-menu li {
   cursor: pointer;
   transition: 0.3s;
+  position: relative;
 }
 
 .nav-menu li:hover {
@@ -33,7 +36,44 @@
   border-radius: 50px;
 }
 
-/* Hamburger */
+/* Active Button Styling */
+.nav-menu li button.active {
+  position: relative;
+  color: white;
+  padding: 4px 10px;
+}
+
+.nav-menu li button.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  background-color: #B923E1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-menu li button.active:hover::after,
+.nav-menu li button.active::after {
+  transform: scaleX(1);
+}
+
+/* Button Reset */
+.nav-menu li button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: 0.3s;
+}
+
+/* Hamburger Menu */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -63,5 +103,89 @@
 
   .hamburger {
     display: flex;
+  }
+}
+
+/* ▼ DROPDOWN FOR WEBS ▼ */
+.skills-dropdown {
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(35, 35, 35);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 25px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  z-index: 1000;
+  min-width: 700px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.skills-dropdown-item {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 18px;
+  border-radius: 16px;
+  text-align: left;
+  transition: all 0.3s ease;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skills-dropdown-item img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Title inside item */
+.skills-dropdown-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+/* Hover Effect */
+.skills-dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* Responsive Dropdown Layout */
+@media screen and (max-width: 1024px) {
+  .skills-dropdown {
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 90vw;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .skills-dropdown {
+    grid-template-columns: 1fr;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 90vw;
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: auto;
   }
 }

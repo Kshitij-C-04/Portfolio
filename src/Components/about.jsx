@@ -1,6 +1,7 @@
 import React from 'react';
 import './about.css';
 import theme from '../assets/theme_pattern.svg';
+import CountUp from 'react-countup';
 
 const About = ({ refProp }) => {
   return (
@@ -12,7 +13,7 @@ const About = ({ refProp }) => {
 
       <div className="about-sections">
         <div className="about-left">
-          {/* You can add an image or animation here if needed */}
+          {/* Optional image or animation */}
         </div>
 
         <div className="about-right">
@@ -44,12 +45,16 @@ const About = ({ refProp }) => {
 
       <div className="about-achievements">
         <div className="about-achievement">
-          <h1>9.17</h1>
+          <h1>
+            <CountUp end={9.17} duration={0.8} decimals={2} enableScrollSpy scrollSpyOnce />
+          </h1>
           <p>CGPA</p>
         </div>
         <hr />
         <div className="about-achievement">
-          <h1>10+</h1>
+          <h1>
+            <CountUp end={10} duration={1.2} suffix="+" enableScrollSpy scrollSpyOnce />
+          </h1>
           <p>Projects Completed</p>
         </div>
       </div>

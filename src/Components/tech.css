@@ -11,13 +11,36 @@
 }
 .tech-title h1{
     padding: 0px 30px;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 600;
     text-align: center;
 }
 .tech-title img{
     position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  max-width: 100%;
+}
+
+/* Tablet (medium screens) */
+@media screen and (max-width: 1023px) {
+  .tech-title h1 {
+    font-size: 45px;
+  }
+
+}
+
+/* Mobile (small screens) */
+@media screen and (max-width: 600px) {
+  .tech {
+    padding: 60px 4vw;
+    gap: 40px;
+  }
+
+  .tech-title h1 {
+    font-size: 36px;
+  }
+
+  
 }

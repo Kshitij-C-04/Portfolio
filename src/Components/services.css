@@ -26,6 +26,7 @@
     bottom: 0;
     right: 0;
     z-index: -1;
+    width: 100%;
 }
 
 .services-container {
@@ -85,6 +86,8 @@
     transform: scale(1.05);
     transition: 0.4s;
 }
+
+
 
 /* -------------------- RESPONSIVE -------------------- */
 

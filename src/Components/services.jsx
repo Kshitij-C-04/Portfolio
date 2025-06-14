@@ -3,6 +3,7 @@ import './services.css';
 import theme from '../assets/theme_pattern.svg';
 import data from '../assets/services_data.js';
 import arrow from '../assets/arrow_icon.svg';
+import { motion } from 'framer-motion';
 
 const Services = ({ refProp }) => {
   return (
@@ -14,14 +15,25 @@ const Services = ({ refProp }) => {
 
       <div className="services-container">
         {data.map((service, index) => (
-          <div key={index} className="services-format">
+          <motion.div
+            key={index}
+            className="services-format"
+            initial={{ opacity: 0, x: -125 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.5,
+              ease: 'easeOut',
+              
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <h3>{service.s_no}</h3>
             <h2>{service.s_name}</h2>
             <div className="services-readmore">
               <p>Read More</p>
               <img src={arrow} alt="arrow" />
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
