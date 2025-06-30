@@ -46,7 +46,7 @@ const About = ({ refProp }) => {
       <div className="about-achievements">
         <div className="about-achievement">
           <h1>
-            <CountUp end={9.17} duration={0.8} decimals={2} enableScrollSpy scrollSpyOnce />
+            <CountUp end={9.27} duration={0.8} decimals={2} enableScrollSpy scrollSpyOnce />
           </h1>
           <p>CGPA</p>
         </div>
