@@ -9,6 +9,11 @@ import canva from './canva.png';
 import php from './php.png';
 import python from './python.png';
 import wordpress from './wordpress.png';
+import next from './next.png';
+import netlify from './netlify.svg';
+import postman from './postman.svg';
+import power from './power.png';
+import vercel from './vercel.png';
 
 const techData = {
   'Web Development': [
@@ -17,7 +22,7 @@ const techData = {
     { name: 'JavaScript', logo: js },
     { name: 'React JS', logo: react },
     { name: 'React Native', logo: reactn },
-    // { name: 'Next JS', logo: next },
+    { name: 'Next JS', logo: next },
   ],
   'Database': [
     { name: 'MySQL', logo: mysql },
@@ -27,16 +32,16 @@ const techData = {
     { name: 'Figma', logo: figma },
     { name: 'Canva', logo: canva },
     { name: 'Wordpress', logo: wordpress },
-    // { name: 'PowerBI', logo: power },
+    { name: 'PowerBI', logo: power },
   ],
   'Backend': [
     { name: 'PHP', logo: php },
     { name: 'Python', logo: python },
   ],
   'Deploy & API':[
-    // {name:'Vercel',logo: vercel},
-    // {name:'Netlify',logo: netlify},
-    // {name:'Postman',logo:postman},
+    {name:'Vercel',logo: vercel},
+    {name:'Netlify',logo: netlify},
+    {name:'Postman',logo:postman},
   ]
 };
 
