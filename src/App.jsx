@@ -2,13 +2,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Navbar from './Components/navbar';
-import Hero from './Components/hero';
-import About from './Components/about';
-import Services from './Components/services';
-import Projects from './Components/projects';
-import Contact from './Components/contact';
-import Tech from './Components/tech';
+import Navbar from './Components/Home/navbar';
+import Hero from './Components/Home/hero';
+import About from './Components/Home/about';
+import Services from './Components/Home/services';
+import Projects from './Components/Home/projects';
+import Contact from './Components/Home/contact';
+import Tech from './Components/Home/tech';
 import ProjectMore from './Components/project_more';
 
 const Home = () => (

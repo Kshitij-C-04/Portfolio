@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { FaBars, FaTimes, FaAngleDown } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
-import Services_Data from "../assets/services_data"; // 👈 Your provided data
+import Services_Data from "../../assets/services_data"; 
 
 const sectionMap = [
   { label: "Home", id: "hero" },

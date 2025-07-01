@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';
-import theme from '../assets/theme_pattern.svg';
+import theme from '../../assets/theme_pattern.svg';
 import CountUp from 'react-countup';
 
 const About = ({ refProp }) => {

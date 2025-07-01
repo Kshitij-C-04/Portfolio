@@ -3,6 +3,9 @@ import './hero.css';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
+  const handleOpenPDF = () => {
+    window.open('/Kshitij_resume.pdf', '_blank');
+  };
   return (
     <div id="hero" className="hero">
       <motion.h1
@@ -17,7 +20,7 @@ const Hero = () => {
       <p></p>
       <div className="hero-action">
         <div className="hero-connect">Connect With Me</div>
-        <div className="hero-resume">My Resume</div>
+        <div className="hero-resume" onClick={handleOpenPDF}>My Resume</div>
       </div>
     </div>
   );

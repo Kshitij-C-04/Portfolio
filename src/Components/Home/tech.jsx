@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import './tech.css';
-import theme from '../assets/theme_pattern.svg';
-import techData from '../assets/techData.js';
+import theme from '../../assets/theme_pattern.svg';
+import techData from '../../assets/techData.js';
 
 const Tech = () => {
   const [activeTab, setActiveTab] = useState('Web Development');

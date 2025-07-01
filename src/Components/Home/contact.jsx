@@ -1,6 +1,6 @@
 import React from 'react';
 import './contact.css';
-import theme from '../assets/theme_pattern.svg';
+import theme from '../../assets/theme_pattern.svg';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Contact = ({ refProp }) => {

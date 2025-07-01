@@ -1,8 +1,8 @@
 import React from 'react';
 import './services.css';
-import theme from '../assets/theme_pattern.svg';
-import data from '../assets/services_data.js';
-import arrow from '../assets/arrow_icon.svg';
+import theme from '../../assets/theme_pattern.svg';
+import data from '../../assets/services_data.js';
+import arrow from '../../assets/arrow_icon.svg';
 import { motion } from 'framer-motion';
 
 const Services = ({ refProp }) => {

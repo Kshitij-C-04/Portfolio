@@ -11,11 +11,10 @@
 
 .services-title {
     position: relative;
-    
 }
 
 .services-title h1 {
-     padding: 0px 30px;
+    padding: 0px 30px;
     font-size: 60px;
     font-weight: 600;
     text-align: center;
@@ -50,6 +49,7 @@
     transition: 0.4s;
     cursor: pointer;
     box-sizing: border-box;
+    transition: transform 0.3s ease;
 }
 
 .services-format h3 {
@@ -78,16 +78,38 @@
     gap: 20px;
     align-items: center;
     margin-top: 20px;
+    transform: translateX(-20px);
+    opacity: 0.6;
+    transition: all 0.4s ease;
+}
+
+.services-format:hover .services-readmore {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .services-format:hover {
     border: 2px solid #ff00ff;
-    background-image: linear-gradient(45deg, #3f0028, #582300);
-    transform: scale(1.05);
-    transition: 0.4s;
 }
 
+/* Optional styling for a button/link inside readmore */
+.services-readmore a,
+.services-readmore button {
+    padding: 10px 20px;
+    background-color: #ff00ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+}
 
+.services-readmore a:hover,
+.services-readmore button:hover {
+    background-color: #df00df;
+}
 
 /* -------------------- RESPONSIVE -------------------- */
 

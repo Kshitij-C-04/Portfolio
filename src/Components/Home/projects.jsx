@@ -1,8 +1,8 @@
 import React from 'react';
 import './projects.css';
-import theme from '../assets/theme_pattern.svg';
-import mydata from '../assets/mywork_data.js';
-import arrow from '../assets/arrow_icon.svg';
+import theme from '../../assets/theme_pattern.svg';
+import mydata from '../../assets/mywork_data.js';
+import arrow from '../../assets/arrow_icon.svg';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -11,6 +11,13 @@ const Projects = ({ refProp }) => {
 
   const handleShowMore = () => {
     navigate('/all-projects');
+  };
+
+  const handleCardClick = (link) => {
+    console.log("Clicked:", link);
+    if (link) {
+      window.open(link, '_blank');
+    }
   };
 
   return (
@@ -45,6 +52,8 @@ const Projects = ({ refProp }) => {
           <motion.div
             key={index}
             className="project-card"
+            // onClick={() => handleCardClick(work.link)}
+            style={{ cursor: work.link ? 'pointer' : 'default' }}
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
