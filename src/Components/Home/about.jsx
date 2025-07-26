@@ -2,8 +2,10 @@ import React from 'react';
 import './about.css';
 import theme from '../../assets/theme_pattern.svg';
 import CountUp from 'react-countup';
+import { useNavigate } from 'react-router-dom';
 
 const About = ({ refProp }) => {
+  const navigate = useNavigate();
   return (
     <div ref={refProp} id="about" className="about">
       <div className="about-title">
@@ -24,6 +26,7 @@ const About = ({ refProp }) => {
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure totam numquam dolorem.
             </p>
+            
           </div>
 
           <div className="about-skills">
@@ -56,9 +59,19 @@ const About = ({ refProp }) => {
             <CountUp end={10} duration={1.2} suffix="+" enableScrollSpy scrollSpyOnce />
           </h1>
           <p>Projects Completed</p>
+        </div> 
+        
+      </div>
+      <div className="about-buttons">
+        <div className="hero-resume" onClick={() => navigate('/experience')}>
+          Experience
+        </div>
+        <div className="hero-resume" onClick={() => navigate('/about-more')}>
+          About Me
         </div>
       </div>
     </div>
+    
   );
 };
 

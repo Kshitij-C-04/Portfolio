@@ -14,6 +14,7 @@ import netlify from './netlify.svg';
 import postman from './postman.svg';
 import power from './power.png';
 import vercel from './vercel.png';
+import cpp from './C++.svg';
 
 const techData = {
   'Web Development': [
@@ -37,6 +38,8 @@ const techData = {
   'Backend': [
     { name: 'PHP', logo: php },
     { name: 'Python', logo: python },
+    {name:'C++' , logo:cpp},
+
   ],
   'Deploy & API':[
     {name:'Vercel',logo: vercel},

@@ -58,6 +58,7 @@ const Contact = ({ refProp }) => {
             <a href="https://github.com/Kshitij-C-04" target="_blank" rel="noreferrer"><FaGithub /></a>
             <a href="https://www.linkedin.com/in/kshitij-chaware-245496205/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
             <a href="https://www.instagram.com/kshitij8110/" target="_blank" rel="noreferrer"><FaInstagram /></a>
+            
           </div>
         </div>
 

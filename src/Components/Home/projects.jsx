@@ -13,12 +13,10 @@ const Projects = ({ refProp }) => {
     navigate('/all-projects');
   };
 
-  const handleCardClick = (link) => {
-    console.log("Clicked:", link);
-    if (link) {
-      window.open(link, '_blank');
-    }
-  };
+  
+  const handleCardClick = (index) => {
+  navigate(`/project/${index}`);
+};
 
   return (
     <motion.div
@@ -52,7 +50,8 @@ const Projects = ({ refProp }) => {
           <motion.div
             key={index}
             className="project-card"
-            // onClick={() => handleCardClick(work.link)}
+            onClick={() => handleCardClick(index)}
+
             style={{ cursor: work.link ? 'pointer' : 'default' }}
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}

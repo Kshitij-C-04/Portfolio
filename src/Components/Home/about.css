@@ -111,6 +111,25 @@
     transform: scale(1.12);
     transition: 0.5s;
 }
+.about-buttons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.hero-resume {
+  padding: 15px 50px;
+  border-radius: 50px;
+  border: 2px solid white;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.hero-resume:hover {
+  border: 2px solid purple;
+  transform: scale(1.05);
+}
 
 /* Medium Devices (Tablets) */
 @media screen and (max-width: 1023px) {
@@ -196,6 +215,17 @@
     }
 
     .about-achievement p {
+        font-size: 18px;
+    }
+
+    .about-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-resume {
+        text-align: center;
+        padding: 12px 30px;
         font-size: 18px;
     }
 }

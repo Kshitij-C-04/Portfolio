@@ -23,7 +23,11 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
-  const handleNavClick = (id) => {
+  const handleNavClick = (id, isSkills = false) => {
+    if (window.innerWidth <= 1023 && isSkills) {
+      setShowDropdown(!showDropdown);
+      return;
+    }
     closeMenu();
     setShowDropdown(false);
     if (location.pathname !== "/") {
@@ -74,11 +78,11 @@ const Navbar = () => {
           sec.label === "Skills" ? (
             <li
               key={index}
-              onMouseEnter={() => setShowDropdown(true)}
-              onMouseLeave={() => setShowDropdown(false)}
+              onMouseEnter={() => window.innerWidth > 1023 && setShowDropdown(true)}
+              onMouseLeave={() => window.innerWidth > 1023 && setShowDropdown(false)}
             >
               <button
-                onClick={() => handleNavClick(sec.id)}
+                onClick={() => handleNavClick(sec.id, true)}
                 className={activeSection === sec.id ? "active" : ""}
               >
                 {sec.label} <FaAngleDown style={{ marginLeft: "5px" }} />

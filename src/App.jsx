@@ -10,6 +10,10 @@ import Projects from './Components/Home/projects';
 import Contact from './Components/Home/contact';
 import Tech from './Components/Home/tech';
 import ProjectMore from './Components/project_more';
+import ProjectDetail from './Components/project_detail';
+import Experience from './Components/Home/experience';
+import AboutMore from './Components/About_more';
+
 
 const Home = () => (
   <>
@@ -29,9 +33,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-projects" element={<ProjectMore />} />
+        <Route path="/project/:id" element={<ProjectDetail />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/about-more" element={<AboutMore />} />
       </Routes>
     </Router>
-  );
+  )
 };
 
 export default App;
