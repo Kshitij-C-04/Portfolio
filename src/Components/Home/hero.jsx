@@ -1,8 +1,10 @@
 import React from 'react';
 import './hero.css';
 import { motion } from 'framer-motion';
-import resume from "../../assets/Kshitij's Resume.pdf"
-import heroBg from '../../assets/hero_banner.jpg'; // Updated import path
+import resume from "../../assets/Kshitij's Resume.pdf";
+import heroBg from '../../assets/hero_banner.jpg';
+
+  
 
 const Hero = () => {
   const handleOpenPDF = () => {
@@ -27,9 +29,11 @@ const Hero = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
+      
+
       <motion.h1
-        initial={{ opacity: 0, y: 50 }}                    // Start slightly below
-        whileInView={{ opacity: 1, y: 0 }}                 // Animate up into place
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.5 }}
       >
@@ -59,7 +63,9 @@ const Hero = () => {
           My Resume
         </div>
       </motion.div>
+      
     </div>
+    
   );
 };
 

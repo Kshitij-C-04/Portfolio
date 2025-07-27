@@ -13,10 +13,9 @@ const Projects = ({ refProp }) => {
     navigate('/all-projects');
   };
 
-  
   const handleCardClick = (index) => {
-  navigate(`/project/${index}`);
-};
+    navigate(`/project/${index}`);
+  };
 
   return (
     <motion.div
@@ -37,13 +36,6 @@ const Projects = ({ refProp }) => {
         className="mywork-container"
         initial="hidden"
         whileInView="visible"
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.2,
-            },
-          },
-        }}
         viewport={{ once: true, amount: 0.2 }}
       >
         {mydata.map((work, index) => (
@@ -51,11 +43,33 @@ const Projects = ({ refProp }) => {
             key={index}
             className="project-card"
             onClick={() => handleCardClick(index)}
-
-            style={{ cursor: work.link ? 'pointer' : 'default' }}
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            style={{
+              cursor: work.link ? 'pointer' : 'default',
+              position: 'relative',
+              zIndex: index // Reverse z-index for proper stacking
+            }}
+            initial={{ 
+              opacity: 0,
+              y: 100,
+              scale: 0.9 
+            }}
+            whileInView={{ 
+              opacity: 1, 
+              y: 0,
+              scale: 1,
+              transition: {
+                duration: 0.8,
+                delay: index * 0.2 // Stagger the animations
+              }
+            }}
+            viewport={{ 
+              once: false,
+              margin: "-20% 0px -20% 0px" // Trigger animation before element is fully in view
+            }}
+            whileHover={{ 
+              scale: 1.02,
+              transition: { duration: 0.2 }
+            }}
           >
             <img src={work.w_img} alt={`Project ${index + 1}`} />
           </motion.div>

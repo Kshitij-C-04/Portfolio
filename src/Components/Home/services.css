@@ -38,6 +38,53 @@
     box-sizing: border-box;
 }
 
+/* Hide mobile carousel by default */
+.mobile-carousel {
+    display: none;
+}
+
+/* Desktop View */
+.desktop-only {
+    display: block;
+}
+
+@media screen and (max-width: 1023px) {
+    .services-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    /* Hide desktop grid items */
+    .desktop-only {
+        display: none;
+    }
+
+    /* Show mobile carousel */
+    .mobile-carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 20px 0;
+        position: relative;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .services-format {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
 .services-format {
     display: flex;
     flex-direction: column;
@@ -170,5 +217,71 @@
 
     .services-format h3 {
         font-size: 20px;
+    }
+
+    /* Mobile Carousel Styles */
+    .mobile-carousel {
+        display: none;
+        position: relative;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(90deg, #DF8908 0%, #B415FF 100%);
+        border: none;
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 24px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-btn.prev {
+        left: -25px;
+    }
+
+    .carousel-btn.next {
+        right: -25px;
+    }
+
+    @media screen and (max-width: 1023px) {
+        .services-container {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+    }
+
+    @media screen and (max-width: 520px) {
+        .desktop-only {
+            display: none;
+        }
+
+        .mobile-carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .services-container {
+            grid-template-columns: 1fr;
+            padding: 0 20px;
+        }
+
+        .services-format {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
     }
 }
