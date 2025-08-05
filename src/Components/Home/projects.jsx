@@ -61,7 +61,7 @@ const Projects = ({ refProp }) => {
               y: 0,
               scale: 1,
               transition: {
-                duration: 0.8,
+                duration: 0.6,
                 delay: index * 0.2 // Stagger the animations
               }
             }}

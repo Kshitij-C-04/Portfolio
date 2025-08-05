@@ -167,4 +167,7 @@
   .features-grid {
     grid-template-columns: 1fr;
   }
+  .skill-description p{
+    font-size: 1rem;
+  }
 }

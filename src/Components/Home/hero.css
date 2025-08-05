@@ -1,3 +1,4 @@
+/* ---------- Base Hero Section ---------- */
 .hero {
   display: flex;
   align-items: center;
@@ -6,6 +7,7 @@
   min-height: 100vh;
   color: white;
   text-align: center;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .hero-container {
@@ -16,17 +18,21 @@
   gap: 40px;
 }
 
+/* ---------- Content Layout ---------- */
 .hero-content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
   flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-text {
   flex: 1;
   text-align: left;
+  min-width: 300px;
 }
 
 .hero-text h1 {
@@ -47,7 +53,7 @@
   line-height: 1.8rem;
 }
 
-/* Code Block */
+/* ---------- Code Block ---------- */
 .code-animation {
   flex: 1;
   background: rgba(0, 0, 0, 0.85);
@@ -59,12 +65,15 @@
   color: #e0e0e0;
   font-size: 1.2rem;
   text-align: left;
-  width: 100%;
   max-height: 300px;
-  overflow-y: auto;
+  overflow: auto;
+  width: 100%;
+  min-width: 300px;
+  word-break: break-word;
+  box-sizing: border-box;
 }
 
-/* Original button styles */
+/* ---------- Buttons ---------- */
 .hero-action {
   display: flex;
   align-items: center;
@@ -102,7 +111,7 @@
   transform: scale(1.05);
 }
 
-/* Responsive Styles */
+/* ---------- Tablet (<=1024px) ---------- */
 @media (max-width: 1024px) {
   .hero-content {
     flex-direction: column;
@@ -111,6 +120,7 @@
 
   .hero-text {
     text-align: center;
+    width: 100%;
   }
 
   .hero-text h1 {
@@ -123,21 +133,33 @@
 
   .code-animation {
     font-size: 1rem;
+    padding: 20px;
+    max-width: 100%;
   }
 }
 
+/* ---------- Mobile (<=600px) ---------- */
 @media (max-width: 600px) {
+  .hero {
+    padding: 60px 4vw;
+  }
+
+  .hero-container {
+    gap: 30px;
+  }
+
   .hero-text h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .hero-text p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .code-animation {
-    font-size: 0.95rem;
-    padding: 20px;
+    font-size: 0.85rem;
+    padding: 18px;
+    max-height: 250px;
   }
 
   .hero-connect,
@@ -148,5 +170,6 @@
 
   .hero-action {
     gap: 15px;
+    flex-direction: column;
   }
 }
