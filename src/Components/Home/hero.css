@@ -1,87 +1,77 @@
 .hero {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  gap: 35px;
-  padding: 120px 5vw 50px 5vw;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 0;
+  justify-content: center;
+  padding: 80px 5vw;
   min-height: 100vh;
   color: white;
   text-align: center;
-  overflow: hidden;
 }
 
-/* ::after = Background Image Layer */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../../assets/hero_banner.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  z-index: -2;
-
-  /* Fade animation */
-  opacity: 0;
-  animation: fadeUp 1.2s ease-out forwards;
-
-  /* Make responsive */
+.hero-container {
+  max-width: 1400px;
   width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-/* ::before = Overlay Layer */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* Adjust if needed */
-  z-index: -1;
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-/* Fade-in Animation */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hero-text {
+  flex: 1;
+  text-align: left;
 }
 
-/* ---------- Hero Text ---------- */
-.hero h1 {
-  width: 40%;
-  font-size: 40px;
+.hero-text h1 {
+  font-size: 2.8rem;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.hero h1 span {
-  background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+.hero-text h1 span {
+  background: linear-gradient(270deg, #DF8908, #B415FF);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.hero p {
-  width: 50%;
-  font-size: 24px;
-  line-height: 40px;
+.hero-text p {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
 }
 
-/* ---------- Action Buttons ---------- */
+/* Code Block */
+.code-animation {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(185, 35, 225, 0.2);
+  font-family: 'Fira Code', monospace;
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  text-align: left;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Original button styles */
 .hero-action {
   display: flex;
   align-items: center;
   gap: 25px;
   font-size: 20px;
   font-weight: 500;
-  margin-bottom: 50px;
+  margin-top: 30px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -112,51 +102,51 @@
   transform: scale(1.05);
 }
 
-/* ---------- Responsive Styles ---------- */
-@media screen and (max-width: 1023px) {
-  .hero h1 {
-    width: 80%;
-    font-size: 32px;
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .hero p {
-    width: 85%;
-    font-size: 20px;
-    line-height: 32px;
+  .hero-text {
+    text-align: center;
   }
 
-  .hero-action {
-    font-size: 18px;
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .code-animation {
+    font-size: 1rem;
   }
 }
 
-@media screen and (max-width: 520px) {
-  .hero {
-    padding-top: 100px;
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
   }
 
-  .hero h1 {
-    width: 100%;
-    font-size: 26px;
+  .hero-text p {
+    font-size: 1rem;
   }
 
-  .hero p {
-    width: 100%;
-    font-size: 18px;
-    line-height: 28px;
-  }
-
-  .hero-action {
-    gap: 15px;
-    font-size: 16px;
+  .code-animation {
+    font-size: 0.95rem;
+    padding: 20px;
   }
 
   .hero-connect,
   .hero-resume {
-    padding: 12px 24px;
-    font-size: 16px;
+    font-size: 0.9rem;
+    padding: 12px 28px;
+  }
+
+  .hero-action {
+    gap: 15px;
   }
 }
-
-/* Add these styles at the end of the file */
-

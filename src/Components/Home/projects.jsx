@@ -1,7 +1,7 @@
 import React from 'react';
 import './projects.css';
 import theme from '../../assets/theme_pattern.svg';
-import mydata from '../../assets/mywork_data.js';
+import mydata from '../../assets/mywork_data.js'; // Update this import
 import arrow from '../../assets/arrow_icon.svg';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -14,7 +14,10 @@ const Projects = ({ refProp }) => {
   };
 
   const handleCardClick = (index) => {
-    navigate(`/project/${index}`);
+    const project = mydata[index];
+    if (project) {
+      navigate(`/project/${project.w_no - 1}`);
+    }
   };
 
   return (
@@ -71,7 +74,7 @@ const Projects = ({ refProp }) => {
               transition: { duration: 0.2 }
             }}
           >
-            <img src={work.w_img} alt={`Project ${index + 1}`} />
+            <img src={work.w_img} alt={work.w_name} />
           </motion.div>
         ))}
       </motion.div>

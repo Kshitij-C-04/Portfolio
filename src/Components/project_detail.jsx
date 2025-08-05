@@ -65,21 +65,21 @@ const ProjectDetail = () => {
 
       {/* Description */}
       <div className="description-section">
-        <h3>Project Description</h3>
-        <p>{project.description}</p>
-      </div>
+  <div>
+    <h3>Project Description</h3>
+    <p>{project.description}</p>
+  </div>
+  <div>
+    <h3 style={{ marginTop: "1.5rem" }}>Key Features</h3>
+    <ul className="features-list">
+      {project.features.map((feature, index) => (
+        <li key={index}>{feature}</li>
+      ))}
+    </ul>
+  </div>
+</div>
 
-      {/* Gallery */}
-      {project.gallery && project.gallery.length > 0 && (
-        <div className="gallery-section">
-          <h3>Project Gallery</h3>
-          <div className="gallery-grid">
-            {project.gallery.map((img, idx) => (
-              <img key={idx} src={img} alt={`Gallery ${idx + 1}`} />
-            ))}
-          </div>
-        </div>
-      )}
+      
     </div>
   );
 };

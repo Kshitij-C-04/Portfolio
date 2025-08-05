@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './services.css';
 import theme from '../../assets/theme_pattern.svg';
 import data from '../../assets/services_data.js';
@@ -8,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Services = ({ refProp }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(0);
+  const navigate = useNavigate();
 
   const handleNext = () => {
     setPrevIndex(currentIndex);
@@ -18,7 +20,23 @@ const Services = ({ refProp }) => {
     setPrevIndex(currentIndex);
     setCurrentIndex((prev) => (prev - 1 + data.length) % data.length);
   };
-  
+
+  const getSkillPath = (skillName) => {
+    const paths = {
+      "Web development": "web-development",
+      "UI/UX design": "ui-ux-design",
+      "App development": "app-development",
+      "API handling": "api-handling",
+      "Data Analytics & Visualization": "data-visualization",
+      "Quality Skills": "quality-skills"
+    };
+    return `/skills/${paths[skillName]}`;
+  };
+
+  const handleCardClick = (skillName) => {
+    navigate(getSkillPath(skillName));
+  };
+
   return (
     <div ref={refProp} id="skills" className="services">
       <div className="services-title">
@@ -39,6 +57,8 @@ const Services = ({ refProp }) => {
               ease: 'easeOut',
             }}
             viewport={{ once: true, amount: 0.3 }}
+            onClick={() => handleCardClick(service.s_name)}
+            style={{ cursor: 'pointer' }}
           >
             <h3>{service.s_no}</h3>
             <h2>{service.s_name}</h2>
@@ -65,6 +85,8 @@ const Services = ({ refProp }) => {
                 opacity: { duration: 0.3 },
                 x: { type: "spring", stiffness: 300, damping: 30 }
               }}
+              onClick={() => handleCardClick(data[currentIndex].s_name)}
+              style={{ cursor: 'pointer' }}
             >
               <h3>{data[currentIndex].s_no}</h3>
               <h2>{data[currentIndex].s_name}</h2>

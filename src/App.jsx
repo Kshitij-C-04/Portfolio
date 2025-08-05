@@ -14,6 +14,13 @@ import ProjectDetail from './Components/project_detail';
 import Experience from './Components/Home/experience';
 import AboutMore from './Components/About_more';
 
+// Import Skill Components
+import WebDevelopment from './Components/Skills/WebDevelopment';
+import UIUXDesign from './Components/Skills/UIUXDesign';
+import AppDevelopment from './Components/Skills/AppDevelopment';
+import APIHandling from './Components/Skills/APIHandling';
+import DataVisualization from './Components/Skills/DataVisualization';
+import QualitySkills from './Components/Skills/QualitySkills';
 
 const Home = () => (
   <>
@@ -36,9 +43,17 @@ const App = () => {
         <Route path="/project/:id" element={<ProjectDetail />} />
         <Route path="/experience" element={<Experience />} />
         <Route path="/about-more" element={<AboutMore />} />
+        
+        {/* Skill Routes */}
+        <Route path="/skills/web-development" element={<WebDevelopment />} />
+        <Route path="/skills/ui-ux-design" element={<UIUXDesign />} />
+        <Route path="/skills/app-development" element={<AppDevelopment />} />
+        <Route path="/skills/api-handling" element={<APIHandling />} />
+        <Route path="/skills/data-visualization" element={<DataVisualization />} />
+        <Route path="/skills/quality-skills" element={<QualitySkills />} />
       </Routes>
     </Router>
-  )
+  );
 };
 
 export default App;

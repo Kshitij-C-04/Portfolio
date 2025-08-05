@@ -38,6 +38,24 @@ const Navbar = () => {
     }
   };
 
+  const getSkillPath = (skillName) => {
+    const paths = {
+      "Web development": "web-development",
+      "UI/UX design": "ui-ux-design",
+      "App development": "app-development",
+      "API handling": "api-handling",
+      "Data Analytics & Visualization": "data-visualization",
+      "Quality Skills": "quality-skills"
+    };
+    return `/skills/${paths[skillName]}`;
+  };
+
+  const handleSkillClick = (skillName) => {
+    navigate(getSkillPath(skillName));
+    setShowDropdown(false);
+    closeMenu();
+  };
+
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -90,16 +108,20 @@ const Navbar = () => {
 
               {/* Dropdown */}
               {showDropdown && (
-  <div className={`skills-dropdown ${menuOpen ? 'mobile-dropdown' : ''}`}>
-    {Services_Data.map((item, i) => (
-      <div key={i} className="skills-dropdown-item">
-        <img src={item.s_img} alt={item.s_name} />
-        <div className="skills-dropdown-title">{item.s_name}</div>
-      </div>
-    ))}
-  </div>
-)}
-
+                <div className={`skills-dropdown ${menuOpen ? 'mobile-dropdown' : ''}`}>
+                  {Services_Data.map((item, i) => (
+                    <div 
+                      key={i} 
+                      className="skills-dropdown-item"
+                      onClick={() => handleSkillClick(item.s_name)}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      <img src={item.s_img} alt={item.s_name} />
+                      <div className="skills-dropdown-title">{item.s_name}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </li>
           ) : (
             <li key={index}>
