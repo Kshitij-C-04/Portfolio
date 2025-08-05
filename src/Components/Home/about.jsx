@@ -23,9 +23,7 @@ const About = ({ refProp }) => {
             <p>
               Enthusiastic learner with a strong passion for coding and technology. Dedicated to continuous personal and professional growth through hands-on experience. Skilled in problem-solving and eager to embrace new challenges. Committed to leveraging coding skills to create innovative solutions.
             </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure totam numquam dolorem.
-            </p>
+            
             
           </div>
 
