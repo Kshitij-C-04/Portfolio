@@ -14,13 +14,15 @@ import ProjectDetail from './Components/project_detail';
 import Experience from './Components/Home/experience';
 import AboutMore from './Components/About_more';
 
-// Import Skill Components
+// Skill Components
 import WebDevelopment from './Components/Skills/WebDevelopment';
 import UIUXDesign from './Components/Skills/UIUXDesign';
 import AppDevelopment from './Components/Skills/AppDevelopment';
 import APIHandling from './Components/Skills/APIHandling';
 import DataVisualization from './Components/Skills/DataVisualization';
 import QualitySkills from './Components/Skills/QualitySkills';
+
+import ScrollToTop from './Components/ScrollToTop';
 
 const Home = () => (
   <>
@@ -36,7 +38,8 @@ const Home = () => (
 const App = () => {
   return (
     <Router>
-      <Navbar /> 
+      <ScrollToTop /> 
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-projects" element={<ProjectMore />} />
